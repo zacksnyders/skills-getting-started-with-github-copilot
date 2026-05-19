@@ -65,3 +65,11 @@ def signup_for_activity(activity_name: str, email: str):
     # Add student
     activity["participants"].append(email)
     return {"message": f"Signed up {email} for {activity_name}"}
+
+
+if __name__ == "__main__":
+    # Allow running with `python src/app.py` for convenience.
+    # For development with auto-reload, prefer: `uvicorn src.app:app --reload`
+    import uvicorn
+
+    uvicorn.run(app, host="127.0.0.1", port=8000)
